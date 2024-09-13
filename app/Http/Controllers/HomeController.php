@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
+use App\Models\Loan;
+use App\Models\LoanProduct;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $customers = Customer::count();
+        $loans = Loan::count();
+        $loanProducts = LoanProduct::with('loans')->get();
+        
+        $loanProductsCount = LoanProduct::count();
+
+        return view('home', compact('customers', 'loans', 'loanProducts', 'loanProductsCount'));
     }
 }

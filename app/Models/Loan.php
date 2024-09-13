@@ -20,4 +20,12 @@ class Loan extends Model
     {
         return $this->belongsTo(LoanProduct::class);
     }
+    public function disbursements()
+    {
+        return $this->hasMany(LoanDisbursement::class);
+    }
+    public function repayments()
+    {
+        return $this->hasMany(LoanRepayment::class);
+    }
 }

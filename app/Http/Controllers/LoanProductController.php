@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\LoanProduct;
 use Illuminate\Http\Request;
+use DB;
+use Log;
 
 class LoanProductController extends Controller
 {
@@ -18,7 +20,8 @@ class LoanProductController extends Controller
      */
     public function index()
     {
-        //
+        $loanProducts = LoanProduct::with('loans')->get();
+        return view('loan_products.index', compact('loanProducts'));
     }
 
     /**

@@ -20,6 +20,6 @@ class Customer extends Model
     //relationships
     public function loanLimit()
     {
-        return $this->hasOne(Loan::class);
+        return $this->hasOne(LoanLimit::class);
     }
 }

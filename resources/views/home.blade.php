@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -14,7 +14,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Customers</h5>
                                     <p class="card-text">Number of customers: {{ $customers }}</p>
-                                    <a href="" class="btn btn-sm btn-primary">View</a>
+                                    <a href="{{ route('customers') }}" class="btn btn-sm btn-primary">View</a>
                                 </div>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Loans</h5>
                                     <p class="card-text">Number of loans: {{ $loans }}</p>
-                                    <a href="" class="btn btn-sm btn-primary">View</a>
+                                    <a href="{{ route('loans') }}" class="btn btn-sm btn-primary">View</a>
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Loan Products</h5>
                                     <p class="card-text">Number of loan products: {{ $loanProductsCount }}</p>
-                                    <a href="" class="btn btn-sm btn-primary">View</a>
+                                    <a href="#bottom" class="btn btn-sm btn-primary">View</a>
                                 </div>
                             </div>
                         </div>

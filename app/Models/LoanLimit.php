@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class LoanLimit extends Model
 {
     use HasFactory, SoftDeletes;
+    //fillables for mass assignment
+    protected $fillable = [
+        'limit_amount'
+    ];
 
     //relationships
     public function customer() {
